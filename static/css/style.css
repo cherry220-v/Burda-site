@@ -1252,4 +1252,74 @@ textarea.form-control {
     padding-top: 80px;
     padding-bottom: 50px;
   }
+
+  .comments {
+    position: relative;
+    background: #f9f9f9;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
   
+  .comments__wrapper {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 25s linear infinite;
+  }
+  
+  .comment-card {
+    flex: 0 0 300px;
+    background: rgb(43, 0, 122);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .comment-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .comment-card strong {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .comment-card p {
+    font-size: 14px;
+  }
+  
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .comment-card {
+      flex: 0 0 250px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .comment-card {
+      flex: 0 0 200px;
+    }
+  
+    .comments {
+      padding: 15px;
+    }
+  
+    .comment-card p {
+      font-size: 12px;
+    }
+  }
